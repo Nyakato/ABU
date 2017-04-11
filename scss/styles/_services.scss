@@ -1,0 +1,106 @@
+// Services Block
+.services-block {
+  margin-top: -100px;
+  position: relative;
+  @include breakpoint(m) {
+    margin-top: -80px;
+  }
+}
+.services-list {
+  list-style: none;
+  padding: 15px 0 0 0;
+  text-align: center;
+}
+.service-item {
+  @include font-size(13);
+  @include line-height(20);
+  color: $mid-grey;
+  padding-left: 5px;
+  padding-right: 5px;
+  min-height: 240px;
+  @include breakpoint(m) {
+    min-height: 280px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  @include breakpoint(l) {
+    min-height: 210px;
+  }
+  p { margin: 0; }
+}
+.service-item-heading {
+  text-transform: capitalize;
+  color: $dark-grey;
+  &:after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: $pink;
+    margin-top: 4px;
+    margin-bottom: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+// Icons
+.service-icon {
+  &:before {
+    content: "";
+    display: block;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    border: 3px solid $pink;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.service-icon-performance:before {
+  background-image: url(../img/graph.svg);
+  background-position: 50% 50%;
+}
+.service-icon-customer:before {
+  background-image: url(../img/bullhorn.svg);
+  background-position: 50% 50%;
+}
+.service-icon-it:before {
+  background-image: url(../img/laptop.svg);
+  background-position: 50% 50%;
+}
+.service-icon-transformation:before {
+  background-image: url(../img/atom.svg);
+  background-position: 50% 50%;
+}
+.service-icon-strategy:before {
+  background-image: url(../img/measure.svg);
+  background-position: 50% 50%;
+}
+.service-icon-equity:before {
+  background-image: url(../img/diamond.svg);
+  background-position: 50% 50%;
+}
+.service-icon-digital:before {
+  background-image: url(../img/screen.svg);
+  background-position: 50% 50%;
+}
+.service-icon-delivery:before {
+  background-image: url(../img/chart.svg);
+  background-position: 50% 50%;
+}
+
+
+// Services Block Animations
+.services-block.active {
+  .content-block-inner {
+    @include animation(1s);
+    animation-delay: .2s;
+    @extend .fade-in;
+  }
+  .service-item {
+    @include animation(1s);
+    animation-delay: .4s;
+    @extend .fade-in;
+  }
+}

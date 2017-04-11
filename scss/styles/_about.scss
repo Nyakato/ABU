@@ -1,0 +1,151 @@
+// About Block
+.about-block {
+  .about-block-content {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+// About - Clients
+.our-clients-block {
+  position: relative;
+  padding-bottom: 20px;
+}
+.clients-list {
+  list-style: none;
+  padding: 0;
+  li {
+    margin: 0;
+    padding: 2px;
+    @include breakpoint(l) {
+      padding: 2px;
+    }
+  }
+}
+.client-item {
+  & > a {
+    display: block;
+    transition: all .3s;
+    &:hover {
+      opacity: .7;
+    }
+  }
+}
+
+// Client Tabs
+.client-tab { display: none; }
+
+// Client Tabs
+.client-tab-radio-1:checked + .client-tab-label + .client-tab-1 { display: block; }
+.client-tab-radio-2:checked + .client-tab-label + .client-tab-2 { display: block; }
+.client-tab-radio-3:checked + .client-tab-label + .client-tab-3 { display: block; }
+
+.client-tab-label {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  display: inline-block;
+  height: 5px;
+  width: 40px;
+  background: $grey;
+  cursor: pointer;
+}
+.client-tab-radio:checked + .client-tab-label { background: $pink; }
+
+.client-tab-label-1 { margin-left: -70px; }
+.client-tab-label-2 { margin-left: -20px; }
+.client-tab-label-3 { margin-left: 30px; }
+
+
+// About - Team
+.team-list {
+  list-style: none;
+  padding: 0;
+  li { margin: 0; }
+}
+.team-item {
+  padding: 0;
+  position: relative;
+  display: block;
+  transition: all .3s;
+  &:hover {
+    & .team-item-content { opacity: 1; }
+  }
+}
+.team-item-content {
+  position: absolute;
+  color: $white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  display: block;
+  @include background-alpha($pink, 100%);
+  opacity: 0;
+  transition: all .3s;
+}
+.team-item-name, .team-item-title, .team-item-position { display: block; }
+.team-item-name {
+  @include font-size(26);
+  @include line-height(32);
+  color: $white;
+  @include breakpoint(m) {
+    margin-bottom: 100px;
+  }
+  @include breakpoint(l) {
+    margin-bottom: 40px;
+  }
+}
+.team-item-title {
+  line-height: normal;
+  padding-top: 5px;
+}
+
+// About - Team - Modal Profile
+.team-profile-heading {
+  font-family: $base-heading-font-family;
+  margin-top: 0;
+  &:after { margin-bottom: 10px; }
+}
+.team-profile-image {
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  @include breakpoint(m) {
+    width: auto;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+}
+.team-profile-content { margin-top: 10px; }
+.team-profile-content-block {
+  @include breakpoint(m) {
+    overflow: hidden;
+  }
+}
+
+// About Block Animations
+.about-block .content-block-inner.active {
+  @include animation(1s);
+  animation-delay: .2s;
+  @extend .fade-in-down;
+}
+.about-content.active {
+  .what-we-do-block {
+    @include animation(1s);
+    animation-delay: .4s;
+    @extend .fade-in-left;
+  }
+  .our-clients-block {
+    @include animation(1s);
+    animation-delay: .4s;
+    @extend .fade-in-right;
+  }
+}
+.our-team-block.active {
+  @include animation(1s);
+  animation-delay: .2s;
+  @extend .fade-in-up;
+}

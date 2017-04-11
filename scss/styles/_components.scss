@@ -1,0 +1,234 @@
+// Shared
+.img-full { width: 100%; }
+
+// Custom Buttons
+.button {
+  border: 1px solid #d7d7d7;
+  background-color: #f3f3f3;
+  line-height: normal;
+  padding: .5em 1em;
+  text-decoration: none;
+  color: #363636;
+  display: inline-block;
+  transition: all 0.3s;
+  &:hover, &:active { text-decoration: none; }
+  &:hover {
+    color: $white;
+    background: #f9f9f9;
+  }
+}
+
+// Button Styled as Link
+.button-link {
+  color: $base-link-color;
+  text-decoration: underline;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  &:hover { text-decoration: none; }
+  &:active { outline: 0; }
+}
+
+// Heading Overrides
+.heading {
+  text-transform: uppercase;
+  color: $pink;
+  &:after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: $pink;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+}
+
+// Forms
+.field {
+  border: 1px solid $grey;
+  background: transparent;
+  padding: 10px;
+  transition: all .2s;
+  &:focus {
+    outline: 0;
+    border-color: $pink;
+  }
+}
+
+// Buttons
+.button {
+  @include font-size(20);
+  @include line-height(28);
+  color: $white;
+  padding: 1em 2.8em;
+  text-decoration: none;
+  border: 1px solid transparent;
+  background: $pink;
+  transition: all .2s;
+  font-weight: 400;
+  display: inline-block;
+  position: relative;
+  border-radius: 40px;
+  &:hover {
+    background: $light-pink;
+    text-decoration: none;
+  }
+  &:active { top: 1px; }
+}
+.button-primary {
+  &:hover { @include background-alpha($pink, 80%); }
+}
+.button-secondary {
+  @include background-alpha($dark-grey, 100%);
+  &:hover { @include background-alpha($dark-grey, 90%); }
+}
+.button-play {
+  width: 80px;
+  height: 80px;
+  border: 0;
+  padding: 0;
+  border-radius: 100%;
+  transition: all .2s;
+  &:hover {
+    @include background-alpha($pink, 80%);
+  }
+  &:before {
+    content: "";
+    color: $white;
+    display: block;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    margin-left: -7px;
+    margin-top: -14px;
+    position: absolute;
+    border-style: solid;
+    border-width: 15px 0 15px 20px;
+    border-color: transparent transparent transparent #fff;
+  }
+}
+
+// Social Icons
+.social-icon {
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: block;
+  transition: all .2s;
+  &:hover { background-repeat: no-repeat; }
+}
+.social-linkedin {
+  background-image: url(../img/linkedin.svg);
+  background-position: 50% 50%;
+  &:hover {
+    background-image: url(../img/linkedin-white.svg);
+    background-position: 50% 50%;
+  }
+}
+.social-facebook {
+  background-image: url(../img/facebook.svg);
+  background-position: 50% 50%;
+  &:hover {
+    background-image: url(../img/facebook-white.svg);
+    background-position: 50% 50%;
+  }
+}
+.social-twitter {
+  background-image: url(../img/twitter.svg);
+  background-position: 50% 50%;
+  &:hover {
+    background-image: url(../img/twitter-white.svg);
+    background-position: 50% 50%;
+  }
+}
+.social-youtube {
+  background-image: url(../img/youtube.svg);
+  background-position: 50% 50%;
+  &:hover {
+    background-image: url(../img/youtube-white.svg);
+    background-position: 50% 50%;
+  }
+}
+
+
+// General Content
+.content-block {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.content-block-inner {
+  margin-bottom: 40px;
+  p {
+    color: $mid-grey;
+    @include font-size(16);
+    @include line-height(24);
+  }
+}
+
+// Feature Block
+.feature-block-heading {
+  @include line-height(40);
+  color: $white;
+  text-transform: uppercase;
+  @extend .col-10;
+  float: none;
+  @extend .center;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+// Modal
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  @include background-alpha($black, 80%);
+  overflow-x: hidden;
+  overflow-y: auto;
+  &:target {
+    display: block;
+    .modal-inner {
+      @include animation(0.3s);
+      @extend .fade-in-up;
+    }
+  }
+}
+.modal-inner {
+  position: relative;
+  z-index: 2000;
+  background: $white;
+  padding: 20px;
+  margin: 70px 20px;
+  @include breakpoint(m) {
+    margin: 20px auto;
+    width: 600px;
+  }
+}
+.modal-close {
+  border: 0;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  &:before, &:after {
+    content: "";
+    width: 30px;
+    height: 3px;
+    display: block;
+    background: $white;
+    position: absolute;
+    top: 17px;
+    left: 5px;
+  }
+  &:before { transform: rotate(45deg); }
+  &:after { transform: rotate(-45deg); }
+  &:hover { opacity: .8; }
+}

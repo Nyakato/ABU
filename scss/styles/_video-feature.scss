@@ -1,0 +1,29 @@
+// Video Feature Block
+.video-feature-block {
+  background: url(../img/video-banner.jpg) 50% 50% no-repeat;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  .content-block-inner {
+    p { color: $white; }
+  }
+}
+
+// Video Feature Block Animations
+.video-feature-block .content-block-inner.active {
+  .feature-block-heading {
+    @include animation(1s);
+    animation-delay: 0.2s;
+    @extend .fade-in-down-big;
+  }
+  p {
+    @include animation(1s);
+    animation-delay: 0.4s;
+    @extend .fade-in;
+  }
+  .button-play {
+    @include animation(1s);
+    animation-delay: 0.6s;
+    @extend .fade-in-down-big;
+  }
+}

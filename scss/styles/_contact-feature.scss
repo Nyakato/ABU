@@ -1,0 +1,19 @@
+// Feature Contact Block
+.contact-feature-block {
+  background: url(../img/requirements-banner.jpg) 50% 50% no-repeat;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.contact-feature-block.active {
+  .feature-block-heading {
+    @include animation(1s);
+    animation-delay: 0.4s;
+    @extend .fade-in-down-big;
+  }
+  .button {
+    @include animation(1s);
+    animation-delay: 0.4s;
+    @extend .fade-in-up-big;
+  }
+}
